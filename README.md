@@ -2,45 +2,45 @@
 
 Good News: Your blog is ready!
 
-[github-io]: https://coolaj86.github.io/digitalcash.dev
-[bliss-new]: https://bliss.js.org/#/?o=coolaj86&r=digitalcash.dev&b=main&ght
-[gh-settings-pages]: https://github.com/coolaj86/digitalcash.dev/settings/pages
-[gh-actions]: https://github.com/coolaj86/digitalcash.dev/actions
+[github-io]: https://digitalcashdev.github.io/digitalcash.dev
+[bliss-new]: https://bliss.js.org/#/?o=digitalcashdev&r=digitalcash.dev&b=main&ght
+[gh-settings-pages]: https://github.com/digitalcashdev/digitalcash.dev/settings/pages
+[gh-actions]: https://github.com/digitalcashdev/digitalcash.dev/actions
 [content-dir]: /content/blog/
 [utterances-app]: https://github.com/apps/utterances
-[gh-issues]: https://github.com/coolaj86/digitalcash.dev/issues
+[gh-issues]: https://github.com/digitalcashdev/digitalcash.dev/issues
 
 ## Just a few steps to **Finish Up**:
 
 1. Enable **GitHub Pages**
-   - Visit [github.com/coolaj86/digitalcash.dev/settings/pages][gh-settings-pages]
+   - Visit [github.com/digitalcashdev/digitalcash.dev/settings/pages][gh-settings-pages]
    - Select <kbd>Source</kbd> <kbd>Branch: gh-pages</kbd>
    - Select <kbd>/ (root)</kbd> (default)
    - <kbd>Save</kbd>
 2. **Create your First Post**
    - Visit [bliss.js.org][bliss-new] to make your first post.
-     - [bliss.js.org/#/?o=coolaj86&r=digitalcash.dev&b=main&ght][bliss-new]
+     - [bliss.js.org/#/?o=digitalcashdev&r=digitalcash.dev&b=main&ght][bliss-new]
 3. **Enable Comments** (optional)
    - Visit [github.com/apps/utterances][utterances-app]
    - Click <kbd>Install</kbd>
-   - Select <kbd>coolaj86</kbd> and <kbd>digitalcash.dev</kbd>
+   - Select <kbd>digitalcashdev</kbd> and <kbd>digitalcash.dev</kbd>
    - You're all set! Comments will become [issues][gh-issues] on _this_ repo!
    - To **disable** comments, comment out `utterences_*` in `config.yaml`
 
 ## View Blog
 
-You can view your blog at [coolaj86.github.io/digitalcash.dev][github-io].
+You can view your blog at [digitalcashdev.github.io/digitalcash.dev][github-io].
 
 <!--
   TODO edge case:
-  https://coolaj86.github.io/coolaj86.github.io/
+  https://digitalcashdev.github.io/digitalcashdev.github.io/
   is actually
-  https://coolaj86.github.io/
+  https://digitalcashdev.github.io/
 -->
 
 ## New Post
 
-<kbd><a href="https://bliss.js.org/#/?o=coolaj86&r=digitalcash.dev&b=main&ght">Create New Post</a></kbd>
+<kbd><a href="https://bliss.js.org/#/?o=digitalcashdev&r=digitalcash.dev&b=main&ght">Create New Post</a></kbd>
 
 You can make new blog posts as easy as Gists. Just write your ~~tweet~~ post,
 and Bliss will fill out the Front Matter for you.
@@ -79,7 +79,7 @@ done all on your own.
    ```
 3. Clone and setup repo
    ```bash
-   git clone git@github.com:coolaj86/digitalcash.dev
+   git clone git@github.com:digitalcashdev/digitalcash.dev
    pushd ./digitalcash.dev
    git submodule init
    git submodule update
@@ -108,7 +108,7 @@ done all on your own.
 **Don't see `gh-pages`?**
 
 Generally the <kbd>Use this template</kbd> process takes about 30s. You check to
-see if it's complete at [github.com/coolaj86/digitalcash.dev/actions][gh-actions].
+see if it's complete at [github.com/digitalcashdev/digitalcash.dev/actions][gh-actions].
 
 Once the Action finishes it may take up to 5 minutes for the first Pages deploy
 to complete.
