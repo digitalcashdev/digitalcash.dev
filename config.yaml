@@ -1,22 +1,22 @@
-title: "<name>"
+title: "AJ ONeal"
 theme: "eon"
-baseURL: "https://<owner>.github.io/<repo>"
+baseURL: "https://coolaj86.github.io/digitalcash.dev"
 #baseURL: 'http://localhost:8801'
 # for multiple authors, see
 # https://discourse.gohugo.io/t/site-author-usage/31459/8?u=coolaj86
 Author:
-  name: "<name>"
-  email: "<email>"
-copyright: "© <name>"
+  name: "AJ ONeal"
+  email: "aj@therootcompany.com"
+copyright: "© AJ ONeal"
 languageCode: "en-us"
 
 Params:
   gravatar: true
   show_edit: "Suggest Edit"
-  git_repo: "https://github.com/<owner>/<repo>"
-  git_branch: "<branch>"
+  git_repo: "https://github.com/coolaj86/digitalcash.dev"
+  git_branch: "main"
   git_host: "github"
-  utterences_repo: "<owner>/<repo>"
+  utterences_repo: "coolaj86/digitalcash.dev"
   utterences_term: "pathname"
   enableGitInfo: true
   enableEmoji: true

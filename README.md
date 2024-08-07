@@ -1,95 +1,118 @@
-# Bliss Template
+# digitalcash.dev
 
-[bliss]: https://bliss.js.org
-[eon-screenshot]:
-  https://user-images.githubusercontent.com/2252601/128049346-f187bb73-8d05-47e5-8ef6-283d8517190a.png
+Good News: Your blog is ready!
 
-Want a blog like this? In about... 30 seconds from now?
+[github-io]: https://coolaj86.github.io/digitalcash.dev
+[bliss-new]: https://bliss.js.org/#/?o=coolaj86&r=digitalcash.dev&b=main&ght
+[gh-settings-pages]: https://github.com/coolaj86/digitalcash.dev/settings/pages
+[gh-actions]: https://github.com/coolaj86/digitalcash.dev/actions
+[content-dir]: /content/blog/
+[utterances-app]: https://github.com/apps/utterances
+[gh-issues]: https://github.com/coolaj86/digitalcash.dev/issues
 
-[![eon][eon-screenshot]](https://ryanburnette.com)
+## Just a few steps to **Finish Up**:
 
-### Features
+1. Enable **GitHub Pages**
+   - Visit [github.com/coolaj86/digitalcash.dev/settings/pages][gh-settings-pages]
+   - Select <kbd>Source</kbd> <kbd>Branch: gh-pages</kbd>
+   - Select <kbd>/ (root)</kbd> (default)
+   - <kbd>Save</kbd>
+2. **Create your First Post**
+   - Visit [bliss.js.org][bliss-new] to make your first post.
+     - [bliss.js.org/#/?o=coolaj86&r=digitalcash.dev&b=main&ght][bliss-new]
+3. **Enable Comments** (optional)
+   - Visit [github.com/apps/utterances][utterances-app]
+   - Click <kbd>Install</kbd>
+   - Select <kbd>coolaj86</kbd> and <kbd>digitalcash.dev</kbd>
+   - You're all set! Comments will become [issues][gh-issues] on _this_ repo!
+   - To **disable** comments, comment out `utterences_*` in `config.yaml`
 
-- [x] 0 Configuration (`config.yaml` builds itself)
-- [x] [0 Dependency on GitHub](/README.tpl.md#manual-builds) (just happens to work in push-button fashion here) 
-- [x] Web interface (Bliss) and CLI tools (Hugo)
-- [x] Build at Home (localhost) or Abroad (GitHub Actions)
-- [x] Built-in Edit links
+## View Blog
 
-## Make it Yours
+You can view your blog at [coolaj86.github.io/digitalcash.dev][github-io].
 
-1. GitHub Templates:
-   <kbd><a href="https://github.com/BeyondCodeBootcamp/bliss-template/generate">Use
-   this template</a></kbd>
-2. Pick a name - probably `blog` (or something else real nice and simple like)
-   - (it will deploy to `https://<owner>.github.io/<repo>`)
-3. **Wait 30 seconds**, and your blog will be ready.
-   - See **next steps** in the new README.md!
+<!--
+  TODO edge case:
+  https://coolaj86.github.io/coolaj86.github.io/
+  is actually
+  https://coolaj86.github.io/
+-->
 
-## Has it been 30 seconds?
+## New Post
 
-Are you seeing this default README after created a new repo from our template?
+<kbd><a href="https://bliss.js.org/#/?o=coolaj86&r=digitalcash.dev&b=main&ght">Create New Post</a></kbd>
 
-**Refresh the page** ♻️.
+You can make new blog posts as easy as Gists. Just write your ~~tweet~~ post,
+and Bliss will fill out the Front Matter for you.
 
-You can also check your <kbd>Actions</kbd> tab. If the automatic configuration
-failed
-[open an issue](https://github.com/BeyondCodeBootcamp/bliss-template/issues) and
-I'll see if I can help.
+1. 🔎 Type <kbd>bli</kbd> in your browser's omnibar and hit <kbd>enter</kbd> (assuming you followed the steps above).
+   - (or visit [bliss.js.org][bliss-new] directly)
+2. 📝 Write your post
+3. 💾 Click <kbd>Add to Github</kbd>, and then <kbd>Commit new file</kbd>
 
-## What's Next?
+Your new post will build automatically.
 
-A new `README.md` with additional instructions will appear in your new repo
-about **30s after** you click
-<kbd><a href="https://github.com/BeyondCodeBootcamp/bliss-template/generate">Use
-this template</a></kbd>.
+Want to **Learn Markdown**? Check out [The Complete GitHub Markdown Cheat Sheet](https://github.com/BeyondCodeBootcamp/beyondcodebootcamp/blob/main/001-Markdown-Cheat-Sheet.md).
 
-It will contain **direct links** into your GitHub Pages Settings to click a few
-buttons. No muss, no fuss (and no searching for the right page).
+## Edit Post
 
-Basically, you'll do this:
+Manage your existing posts directly on GitHub. \
+Don't worry, `.GitInfo.lastmod` will pull the new "updated at" date from `git`!
 
-- [ ] Enable GitHub Pages for your default branch
-  - <kbd>Settings</kbd> ➡️ <kbd>Pages</kbd> (left-hand side) ➡️ <kbd>Branch:
-    gh-pages</kbd>
-- [ ] Enable GitHub Issues as comments via [utterences](https://utterenc.es)
-- [ ] Create your first post using [bliss.js.org][bliss] as a front-end
-  - The **New Post** link in the `README` will be pre-filled with your blog's
-    repo.
+> [/content/blog/][content-dir]
 
-Your site will be available at <kbd>https://{owner}.github.io/{repo}/</kbd>.
+Just click edit, then edit and commit!
 
-### Custom Domains
+# Manual Builds
 
-If you'd like to use a custom domain, such as `example.com`:
+It's always nice to know that when the 💩 hits the fan, you can still get 💩
+done all on your own.
 
-1. Create a file `CNAME` in the root of the project \
-   (the obvious, normal, top-level directory)
-3. Login to your Domain / DNS provider (such as [name.com](https://name.com)) and replace any `example.com` records with 
-  - EITHER an `ANAME` (also called `ALIAS`) record
-    - the `ANAME` record should point to
-      ```txt
-      <user-or-organization>.github.io
-      ```
-  - OR `A` and `AAAA` records
-    - `A` records should point to
-      ```txt
-      185.199.108.153
-      185.199.109.153
-      185.199.110.153
-      185.199.111.153
-      ```
-    - `AAAA` records should point to
-      ```txt
-      2606:50c0:8000::153
-      2606:50c0:8001::153
-      2606:50c0:8002::153
-      2606:50c0:8003::153
-      ```
+1. Edit `config.yaml` to taste... \
+   or `bash ./scripts/ga-template.sh`.
+2. Install `hugo` and `node` via Webi:
+   ```bash
+   curl -sS https://webinstall.dev/hugo@v0.86 | bash
+   curl -sS https://webinstall.dev/node@v16 | bash
+   # or
+   # bash ./scripts/install-deps.sh
+   ```
+3. Clone and setup repo
+   ```bash
+   git clone git@github.com:coolaj86/digitalcash.dev
+   pushd ./digitalcash.dev
+   git submodule init
+   git submodule update
+   hugo
+   # or
+   # bash ./scripts/build.sh
+   ```
+4. Inspect the build
+   ```bash
+   ls ./public
+   ```
+5. Deploy to GitHub pages
+   ```bash
+   git checkout gh-pages
+   rsync -avhP public/ ./
+   rm -rf public/
+   git add ./
+   git commit -m "deploy: latest build"
+   git push
+   # or
+   # bash ./scripts/deploy.sh
+   ```
 
-For more info, see <https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain>
+## Troubleshooting
 
-## Other Sites using the eon theme:
+**Don't see `gh-pages`?**
 
-- [ryanburnette.com](https://ryanburnette.com)
-- [therootcompany.com](https://therootcompany.com)
+Generally the <kbd>Use this template</kbd> process takes about 30s. You check to
+see if it's complete at [github.com/coolaj86/digitalcash.dev/actions][gh-actions].
+
+Once the Action finishes it may take up to 5 minutes for the first Pages deploy
+to complete.
+
+**Something else wrong?**
+
+Open an issue on <https://github.com/BeyondCodeBootcamp/bliss-template>.
