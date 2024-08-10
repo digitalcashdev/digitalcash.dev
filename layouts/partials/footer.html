@@ -1,0 +1,18 @@
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        {{ .Site.Params.copyright }}.
+        {{ if (isset .Site.Params "git_repo") }}
+            Source at
+            <a href="{{ .Site.Params.git_repo }}" target="_blank">{{ .Site.Params.git_repo }}</a>.
+        {{ end }}
+      <br>
+        Themed with
+        <a href="https://github.com/ryanburnette/eon" target="_blank">eon</a>.
+        Built with <a href="https://bliss.js.org" target="_blank">Bliss ✨</a>
+      </p>
+    </div>
+  </div>
+</footer>
+<script src='{{ "main.js" | absURL }}'></script>

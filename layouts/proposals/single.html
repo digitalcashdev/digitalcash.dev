@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="section default-single">
+  <div class="container">
+    <div class="content">
+      {{ partial "postmeta-head" . }}
+      <div class="single-title">
+        {{ partial "title" . }}
+      </div>
+      {{ .Content }}
+      {{ partial "postmeta-foot" . }}
+    </div>
+  </div>
+</section>
+{{ end }}

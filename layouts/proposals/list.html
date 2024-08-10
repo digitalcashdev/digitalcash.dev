@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    <h1>Proposals</h1>
+  </div>
+</section>
+<section class="section blog-list">
+  <div class="container">
+    <div class="content">
+      <!-- {{ partial "bloghead" . }} -->
+      {{ range .Pages }}
+        {{ if not (isset .Params "noindex") }}
+          <article class="item">
+            {{ partial "postmeta-head" . }}
+            {{ partial "title" . }}
+          </article>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

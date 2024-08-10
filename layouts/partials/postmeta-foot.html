@@ -1,0 +1,14 @@
+<div class="postmeta-foot">
+  <div class="columns">
+    <div class="column">
+      {{ partial "categories" . }}
+    </div>
+    <div class="column">
+      {{ if (and (isset .Site.Params "show_edit") (isset .Site.Params "git_repo") (isset .Site.Params "git_branch") (isset .Site.Params "git_host")) }}
+        {{ partial "show-edit" . }}
+      {{ end }}
+    </div>
+  </div>
+    {{ partial "utterances" . }}
+    {{ partial "disqus" . }}
+</div>
