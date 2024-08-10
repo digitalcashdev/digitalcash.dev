@@ -1,6 +1,7 @@
 ---
 title: RPC Web Proxy & Explorer 2024-Q3
-description: To cast a vote for focusing on The Web, and supporting web developer tools.
+description:
+  To cast a vote for focusing on The Web, and supporting web developer tools.
 date: 2024-08-10
 updated: 2024-08-10
 categories:
@@ -15,6 +16,8 @@ Dash, on The Web.
 (RPC Web Proxy and RPC Explorer for integrators)
 
 ## Why
+
+{{< youtube id="Cx6u7mVKZmE" >}}
 
 These are the services that I wish I had had access to years ago. It would have
 saved me 10s of hours to have all the tools and documentation available together
