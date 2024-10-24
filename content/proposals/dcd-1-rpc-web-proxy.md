@@ -1,9 +1,9 @@
 ---
-title: RPC Web Proxy & Explorer 2024-Q3
+title: RPC Web Proxy & Explorer 2024-Q4
 description:
   To cast a vote for focusing on The Web, and supporting web developer tools.
 date: 2024-08-10
-updated: 2024-08-10
+updated: 2024-10-24
 categories:
   - Web Development
 ---
