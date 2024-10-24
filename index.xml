@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DigitalCash.dev</title>
+    <link>https://digitalcash.dev/</link>
+    <description>Recent content on DigitalCash.dev</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>aj@therootcompany.com (AJ ONeal)</managingEditor>
+    <webMaster>aj@therootcompany.com (AJ ONeal)</webMaster>
+    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://digitalcash.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RPC Web Proxy &amp; Explorer 2024-Q4</title>
+      <link>https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/</guid>
+      <description>Dash, on The Web.&#xA;https://rpc.digitalcash.dev (mainnet) https://trpc.digitalcash.dev (testnet) (RPC Web Proxy and RPC Explorer for integrators)&#xA;Why These are the services that I wish I had had access to years ago. It would have saved me 10s of hours to have all the tools and documentation available together directly on the web, immediately - also getting a jumpstart on coding without waiting for hours of syncing.&#xA;This proposal serves 2 functions:</description>
+    </item>
+    <item>
+      <title>RPC Web Proxy &amp; Explorer: Installation
+</title>
+      <link>https://digitalcash.dev/docs/dcd-rpc-web-proxy-explorer/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/docs/dcd-rpc-web-proxy-explorer/</guid>
+      <description>System Requirements&#xA;1vCPU 32MB RAM 16MB Storage (MB, not GB) Install dashd:&#xA;curl https://webi.sh/dashd | sh source ~/.config/envman/PATH.env Wait for a full sync&#xA;Update dash.conf as needed, and restart:&#xA;[main] rpcuser=dash-rpcproxy rpcpassword=CHANGE_ME rpcbind=0.0.0.0:9998 rpcallowip=0.0.0.0/0 [test] rpcuser=dash-rpcproxy rpcpassword=CHANGE_ME rpcbind=0.0.0.0:19998 rpcallowip=0.0.0.0/0 Install dash-rpcproxy See https://github.com/digitalcashdev/rpcproxy and https://github.com/digitalcashdev/rpcproxy/issues/3&#xA;Update config file and workdir&#xA;mkdir -p ~/srv/dash-rpcproxy/ mkdir -p ~/.config/dash-rpcproxy/ touch ~/.config/dash-rpcproxy/env export DASHD_RPC_USERNAME=dash-rpcproxy export DASHD_RPC_PASSWORD=CHANGE_ME export DASHD_RPC_HOSTNAME=localhost export DASHD_RPC_PORT=19998 </description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://digitalcash.dev/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/about/</guid>
+      <description>I&amp;rsquo;m the most interesting man in the universe.&#xA;I once made a mistake, just to see how it feels.</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://digitalcash.dev/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/contact/</guid>
+      <description>john.doe@example.com +1 (555) 867-5309 123 Sesame St New York, NY 10001</description>
+    </item>
+  </channel>
+</rss>

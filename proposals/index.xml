@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Proposals on DigitalCash.dev</title>
+    <link>https://digitalcash.dev/proposals/</link>
+    <description>Recent content in Proposals on DigitalCash.dev</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>aj@therootcompany.com (AJ ONeal)</managingEditor>
+    <webMaster>aj@therootcompany.com (AJ ONeal)</webMaster>
+    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://digitalcash.dev/proposals/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RPC Web Proxy &amp; Explorer 2024-Q4</title>
+      <link>https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/</guid>
+      <description>Dash, on The Web.&#xA;https://rpc.digitalcash.dev (mainnet) https://trpc.digitalcash.dev (testnet) (RPC Web Proxy and RPC Explorer for integrators)&#xA;Why These are the services that I wish I had had access to years ago. It would have saved me 10s of hours to have all the tools and documentation available together directly on the web, immediately - also getting a jumpstart on coding without waiting for hours of syncing.&#xA;This proposal serves 2 functions:</description>
+    </item>
+  </channel>
+</rss>
