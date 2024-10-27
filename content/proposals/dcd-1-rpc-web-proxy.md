@@ -139,6 +139,11 @@ Digital Cash accessible on The Web.
 
 ## Meta
 
+| Name         | `DCD_RPC-Web-Proxy-Explorer_2024-Q4-fixed`                           |
+| :----------- | :----------------------------------------------------------------- |
+| Gobject      | `2342311e17dad26270d5afeb2023b52ab88aac30b8c9105f9538c70209f15aa3` |
+| Gobject Link | <https://rpc.digitalcash.dev/#?method=gobject&params=["get","2342311e17dad26270d5afeb2023b52ab88aac30b8c9105f9538c70209f15aa3"]&submit> |
+
 | Name         | `DCD_RPC-Web-Proxy-and-Explorer_2024-Q3`                           |
 | :----------- | :----------------------------------------------------------------- |
 | Gobject      | `831672df4230c3578c10ab4c939d912596ca8b9328a93912ddf596699d6a3af9` |
