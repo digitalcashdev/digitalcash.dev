@@ -1,6 +1,7 @@
 ---
 title: Update Dash SDK to ESM
 description: Convert all of the existing Dash SDK to ESM
+publishDate: 2024-11-04
 date: 2024-11-06
 updated: 2024-11-06
 categories:

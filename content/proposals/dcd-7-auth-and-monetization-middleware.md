@@ -3,6 +3,7 @@ title: Develop Auth & Monetization Middleware
 description:
   Create an middleware that requires payment in Dash in order to use a Web App
   or API.
+publishDate: 2024-11-04
 date: 2024-11-07
 updated: 2024-11-07
 categories:
