@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RPC Web Proxy &amp; Explorer 2024-Q4 - DigitalCash.dev</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="git_repo" content="https://github.com/digitalcashdev/digitalcash.dev" />
+    <meta name="git_host" content="github" />
+    <meta name="git_branch" content="main" />
+    <meta name="content_path" content="content" />
+    <link rel="stylesheet" href="https://digitalcash.dev/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <header class="header">
+        <div class="brand content">
+          <h1>
+            <a href="https://digitalcash.dev/">DigitalCash.dev</a>
+          </h1>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="https://digitalcash.dev/">Home</a></li>
+            <li><a href="https://digitalcash.dev/proposals">Proposals</a></li>
+            <li><a href="https://digitalcash.dev/docs">Docs</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="section default-single">
+        <div class="container">
+          <div class="content">
+            <div class="postmeta-head">
+              <p>
+                <span class="author">
+                  <img class="gravatar" src="https://www.gravatar.com/avatar/71d4a1d0fd4b11008b4c7f655c3a43c4?s=64&d=identicon" />
+                  <span class="name">AJ ONeal</span>
+                </span>
+                <span class="date">August 10, 2024</span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-1-rpc-web-proxy.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-1-rpc-web-proxy.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+              </p>
+            </div>
+            <div class="single-title">
+              <h1 class="title"><a href="https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/">RPC Web Proxy &amp; Explorer 2024-Q4</a></h1>
+            </div>
+            <p>Dash, on The Web.</p>
+            <ul>
+              <li><a href="https://rpc.digitalcash.dev">https://rpc.digitalcash.dev</a> (mainnet)</li>
+              <li><a href="https://trpc.digitalcash.dev">https://trpc.digitalcash.dev</a> (testnet)</li>
+            </ul>
+            <p>(RPC Web Proxy and RPC Explorer for integrators)</p>
+            <h2 id="why">Why</h2>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+              <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Cx6u7mVKZmE?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0" title="YouTube video"></iframe>
+            </div>
+            <p>These are the services that I wish I had had access to years ago. It would have saved me 10s of hours to have all the tools and documentation available together directly on the web, immediately - also getting a jumpstart on coding without waiting for hours of syncing.</p>
+            <p>This proposal serves 2 functions:</p>
+            <ol>
+              <li>
+                <p>Literal &ldquo;buy in&rdquo; on the idea that:</p>
+                <ul>
+                  <li>
+                    We believe that we want Digital Cash on <em>The Web</em> <br />
+                    and
+                  </li>
+                  <li>We want to lower the barrier to entry for Developers - especially Web Devs</li>
+                </ul>
+              </li>
+              <li>
+                <p>Applying payment towards the hosting of redundant RPC Web Proxy &amp; Explorer setups for both mainnet and testnet</p>
+              </li>
+            </ol>
+            <h2 id="how">How</h2>
+            <p>&ldquo;Hello World&rdquo;, without hours of sync.</p>
+            <p>Typically ALL of the Dash RPCs are restricted from public use by a password.</p>
+            <p>This means that in order to access them, you have to have a full node fully synced. And if you don&rsquo;t have the correct, non-default options turned on, you have to sync again.</p>
+            <p>Additionally, the necessary documentation and services necessary to use the RPCs effectively - the RPC help, the DCG docs, Insight APIs, Faucets, etc - are scattered, abstracted in ways that aren&rsquo;t intuitive, and often out-of-date.</p>
+            <h3 id="dash-rpc-web-proxy">Dash RPC Web Proxy</h3>
+            <p><code>dash-rpcproxy</code> authorizes and makes a full node&rsquo;s public RPCs directly available on The Web without the need for any additional tools or layers of abstraction or indirection.</p>
+            <ul>
+              <li>Written in Go for speed and security</li>
+              <li>whitelists Public RPCs</li>
+              <li>private RPCs remain unavailable</li>
+              <li>CORS-enabled for Web Apps</li>
+              <li>serves built-in RPC Explorer, or a custom version</li>
+              <li>whitelist can be customized (requires restart)</li>
+            </ul>
+            <p>Although some of this functionality is available through Insight, this:</p>
+            <ul>
+              <li>exposes ALL RPC capabilities</li>
+              <li>doesn&rsquo;t require code updates to support RPC changes</li>
+              <li>doesn&rsquo;t have artificial bytes limits or memory-related bugs</li>
+              <li>
+                easiest possible install <br />
+                (just copy the file and run it)
+              </li>
+              <li>
+                cross-platform binary with no dependencies <br />
+                (Linux, Mac &amp; Windows, on x64 and ARM)
+              </li>
+            </ul>
+            <h3 id="dash-rpc-explorer">Dash RPC Explorer</h3>
+            <p>The Explorer makes it possible for anyone to explore and test the RPCs right from their web browser, and provides a single point of access to other important resources.</p>
+            <ul>
+              <li>Autocompletes all RPCs in the Public Whitelist</li>
+              <li>Shows help for each RPC when selected</li>
+              <li>
+                Shows an example of using the RPC with common developer tools
+                <ul>
+                  <li>curl</li>
+                  <li>fetch</li>
+                </ul>
+              </li>
+              <li>Links to the CrowdNode and DCG Faucets (testnet only)</li>
+              <li>Links to DCG Docs</li>
+            </ul>
+            <h3 id="always-the-latest-dashd">Always the latest <code>dashd</code></h3>
+            <p>The service has 2 full nodes on each network.</p>
+            <p>The default server is updated to the latest dashd from the DCG GitHub Releases, every day.</p>
+            <p>
+              The other server remains on the previous version for at least several days, and can be switched immediately switch if anything goes wrong during an update. <br />
+              (and I have a future goal to make guaranteed access to the stable server paid in DASH)
+            </p>
+            <h3 id="hosting-by-mnos">Hosting by MNOs</h3>
+            <p>Although I intend these sets of services to be available for as long as the community finds them useful, my vision is to see these services - and many others like them - hosted directly by, and being directly profitable to, the MNOs that choose to run them.</p>
+            <p>I have another proposal in mind for how to accomplish that, which I&rsquo;ll retroactively link here once it&rsquo;s ready. Essentially the idea is to integrate Dash keys with Web-standard auth tokens to directly pay (or stake collateral) for API usage - a mix of time and number of requests, as is common in the industry.</p>
+            <h2 id="what">What</h2>
+            <p>I&rsquo;ve set up a total of 6 servers for this service. The redundant mainnet and testnet nodes are provisioned according to a mix of the recommendations at <a href="https://www.dash.org/blog/dash-evolution-v1-0-0-release-announcement/">https://www.dash.org/blog/dash-evolution-v1-0-0-release-announcement/</a> and my own experimentation, which I&rsquo;ve documented at <a href="https://webinstall.dev/dashd/">https://webinstall.dev/dashd/</a>.</p>
+            <p>That totals $182/month on Digital Ocean, which I use as a baseline for simplicity&rsquo;s sake since they have about the best pricing available:</p>
+            <ul>
+              <li>
+                2x Full Nodes on <code>mainnet</code>
+                <ul>
+                  <li>$48/month for 4 vCPU + 8GB RAM</li>
+                  <li>$15/month for 150GB Storage</li>
+                </ul>
+              </li>
+              <li>
+                2x Full Nodes on <code>testnet</code>
+                <ul>
+                  <li>$24/month for 2 vCPU + 4GB RAM</li>
+                  <li>(no extra storage)</li>
+                </ul>
+              </li>
+              <li>
+                2x Web Proxies
+                <ul>
+                  <li>$4/month for 1 vCPU + 512MB RAM</li>
+                  <li>(no extra storage)</li>
+                </ul>
+              </li>
+              <li>
+                1x Domain
+                <ul>
+                  <li>$17/year</li>
+                </ul>
+              </li>
+            </ul>
+            <p>My ask of 4 DASH serves to apply towards my own costs, but more importantly signals that the fair market cost of running these services is worth making Digital Cash accessible on The Web.</p>
+            <h2 id="meta">Meta</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th style="text-align: left">Name</th>
+                  <th style="text-align: left"><code>DCD_RPC-Web-Proxy-Explorer_2024-Q4-fixed</code></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: left">Gobject</td>
+                  <td style="text-align: left"><code>2342311e17dad26270d5afeb2023b52ab88aac30b8c9105f9538c70209f15aa3</code></td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">Gobject Link</td>
+                  <td style="text-align: left"><a href="https://rpc.digitalcash.dev/#?method=gobject&amp;params=%5B%22get%22,%222342311e17dad26270d5afeb2023b52ab88aac30b8c9105f9538c70209f15aa3%22%5D&amp;submit">https://rpc.digitalcash.dev/#?method=gobject&amp;params=[&quot;get&quot;,&quot;2342311e17dad26270d5afeb2023b52ab88aac30b8c9105f9538c70209f15aa3&quot;]&amp;submit</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th style="text-align: left">Name</th>
+                  <th style="text-align: left"><code>DCD_RPC-Web-Proxy-and-Explorer_2024-Q3</code></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: left">Gobject</td>
+                  <td style="text-align: left"><code>831672df4230c3578c10ab4c939d912596ca8b9328a93912ddf596699d6a3af9</code></td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">Gobject Link</td>
+                  <td style="text-align: left"><a href="https://rpc.digitalcash.dev/#?method=gobject&amp;params=%5B%22get%22,%22831672df4230c3578c10ab4c939d912596ca8b9328a93912ddf596699d6a3af9%22%5D&amp;submit">https://rpc.digitalcash.dev/#?method=gobject&amp;params=[&quot;get&quot;,&quot;831672df4230c3578c10ab4c939d912596ca8b9328a93912ddf596699d6a3af9&quot;]&amp;submit</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="postmeta-foot">
+              <div class="columns">
+                <div class="column">
+                  <div class="categories">
+                    <span class="catlabel"><strong>Categories:</strong></span>
+                    <ul>
+                      <li><a href="https://digitalcash.dev/categories/web-development/">Web Development</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="column">
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-1-rpc-web-proxy.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-1-rpc-web-proxy.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+                </div>
+              </div>
+              <div class="utterances-container">
+                <script src="https://utteranc.es/client.js" repo="digitalcashdev/digitalcash.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            © Dash Developers. Source at
+            <a href="https://github.com/digitalcashdev/digitalcash.dev" target="_blank">https://github.com/digitalcashdev/digitalcash.dev</a>.
+            <br />
+            Themed with
+            <a href="https://github.com/ryanburnette/eon" target="_blank">eon</a>. Built with <a href="https://bliss.js.org" target="_blank">Bliss ✨</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://digitalcash.dev/main.js"></script>
+  </body>
+</html>

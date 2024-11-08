@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Develop Dash Platform Web Server - DigitalCash.dev</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="git_repo" content="https://github.com/digitalcashdev/digitalcash.dev" />
+    <meta name="git_host" content="github" />
+    <meta name="git_branch" content="main" />
+    <meta name="content_path" content="content" />
+    <link rel="stylesheet" href="https://digitalcash.dev/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <header class="header">
+        <div class="brand content">
+          <h1>
+            <a href="https://digitalcash.dev/">DigitalCash.dev</a>
+          </h1>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="https://digitalcash.dev/">Home</a></li>
+            <li><a href="https://digitalcash.dev/proposals">Proposals</a></li>
+            <li><a href="https://digitalcash.dev/docs">Docs</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="section default-single">
+        <div class="container">
+          <div class="content">
+            <div class="postmeta-head">
+              <p>
+                <span class="author">
+                  <img class="gravatar" src="https://www.gravatar.com/avatar/71d4a1d0fd4b11008b4c7f655c3a43c4?s=64&d=identicon" />
+                  <span class="name">AJ ONeal</span>
+                </span>
+                <span class="date">November 5, 2024</span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-5-platform-web-server.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-5-platform-web-server.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+              </p>
+            </div>
+            <div class="single-title">
+              <h1 class="title"><a href="https://digitalcash.dev/proposals/dcd-5-platform-web-server/">Develop Dash Platform Web Server</a></h1>
+            </div>
+            <p>Developing a Dash Web Server for Dash Platform (ENOs), that also benefits MNOs and FNOs to solve these problems:</p>
+            <ul>
+              <li>
+                UI for Service Management <br />
+                (ex: domain, port, tls termination, path)
+              </li>
+              <li>
+                Automated Certificates via Let&rsquo;s Encrypt + CertMagic <br />
+                (Fix the ZeroSSL problem)
+              </li>
+              <li>
+                Custom Domain Names / IPs <br />
+                (Fix the IP-only problems)
+              </li>
+              <li>
+                Automated or Manual DNS <br />
+                (Fix the IP problem)
+              </li>
+              <li>
+                Make Dash Network Services Web-Accessible <br />
+                (RPC, P2P, ZMQ, gRPC, etc)
+              </li>
+              <li>
+                Participating Node Registry <br />
+                (like masternodelist)
+              </li>
+              <li>
+                Rate Limiting + API Protection <br />
+                (to prevent abuse)
+              </li>
+              <li>
+                Easily Host Dash Apps <br />
+                (assign domain, point to files and internal port)
+              </li>
+              <li>
+                Single-Command Install <br />
+                (and easy manual install)
+              </li>
+            </ul>
+            <h2 id="why">Why</h2>
+            <p>So that customers can use Dash Network services in their Web Browser.</p>
+            <p>So that developers can build on Dash Network for the Web Browser, and mobile.</p>
+            <p>To make Dash Platform a First-Class Citizen, available directly on the Web - and make it stupid-simple for operators to manage domains, certs, and which Dash Network services are exposed.</p>
+            <p>This is the answer to numerous concerns about the issues of ZeroSSL, Envoy, and addressing MNOs, ENOs, and FNOs by domain name.</p>
+            <h3 id="why-full-custom">Why Full Custom?</h3>
+            <p>I&rsquo;ve created systems with complex interdependencies similar to Platform and the other Dash Network services in the past - with HAProxy, Caddy, and others - and I ran into many similar problems as to the issues with Envoy right now - it&rsquo;s increasingly challenging to get generic tools to work with very specific, uncommon configurations.</p>
+            <p>Also, we need operators of the ENOs, MNOs, and FNOs systems to be able to setup and manage these capabilities on their own - so we need an API and a custom Web App flow for the setup.</p>
+            <p>Caddy probably has the best generic API for Web Services, and it would simply require too much shared knowledge and education to maintain in the DAO (just as Envoy has proven to be).</p>
+            <p>Building custom allows us to win both on simplicity and flexibility - we create the options we need.</p>
+            <h2 id="how">How</h2>
+            <p>I&rsquo;ll be creating a purpose-built Web Server that&rsquo;s matched to work perfectly with Platform&rsquo;s Envoy setup for ENOs, and also extend the capability for MNOs and FNOs to provide Dash Network services on the Web.</p>
+            <p>From Docker and Caddy to Traefik, Tailscale and Kubernetes, much of the most well-written and widely deployed server software is written in Go - even TenderDash and gRPC - because it&rsquo;s purpose-built to be secure, fast to build with, and performant in production.</p>
+            <p>I&rsquo;ll predominantly be using Go&rsquo;s standard library, as well as a few key libraries, such as CertMagic for Let&rsquo;s Encrypt.</p>
+            <p>I&rsquo;ll be using JavaScript, HTML, and CSS for the Management Web App.</p>
+            <p>I&rsquo;ve built similar custom webservers with Let&rsquo;s Encrypt and SNI and Reverse Proxy capabilities in the past, including <a href="https://telebit.io">Telebit</a> and Greenlock.</p>
+            <h2 id="what">What</h2>
+            <p>A single-file binary web server that can be installed with a single command, and setup with a few clicks.</p>
+            <p>It will have an internal API for live updating config changes without server restarts, and a built-in Web App for setup and management.</p>
+            <p>Domain names, ports, certificates, and other details can all be updated manually or automatically.</p>
+            <p>There will be an optional Dash Node registry (like <code>masternodelist</code>) to verify and enumerate the participating nodes, so that the Dash Network services can be accessed in a more decentralized fashion, without relying on any specific node.</p>
+            <h3 id="software-development">Software Development</h3>
+            <ul>
+              <li>server code will be written in Go</li>
+              <li>the Management UI will be implemented in plain JavaScript, HTML, and CSS</li>
+              <li>there probably won&rsquo;t be any independent libraries developed for this</li>
+            </ul>
+            <h3 id="installation--deployment">Installation &amp; Deployment</h3>
+            <p>I will also create self-install scripts so that any DNOs (Dash Node owners) of all types can bring the value of these tools to the whole Dash Network.</p>
+            <p>These will be similar to the <a href="https://webinstall.dev/dashd">DashCore Daemon</a> installer I created previously.</p>
+            <h3 id="funding-development">Funding Development</h3>
+            <p>Requesting 400 DASH total.</p>
+            <p>200 DASH / month for 2 months for documented, deployable deliverables.</p>
+            <p>That might sound like way it&rsquo;s way too little - and it may be - but Go is extremely well-equipped for these sorts of problems, and very quick to work in in general. I&rsquo;m confident that I&rsquo;ll have a deliverable within that timeframe and budget.</p>
+            <p>If I do need to extend, I will, and I&rsquo;ll have a usable product already in hand when I do so.</p>
+            <h3 id="unused--excess-funds">Unused / Excess Funds</h3>
+            <p>Surplus funds, if any, will be put towards future Dash SDK, Explorer, Proxy, or Payments work.</p>
+            <div class="postmeta-foot">
+              <div class="columns">
+                <div class="column">
+                  <div class="categories">
+                    <span class="catlabel"><strong>Categories:</strong></span>
+                    <ul>
+                      <li><a href="https://digitalcash.dev/categories/web-development/">Web Development</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="column">
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-5-platform-web-server.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-5-platform-web-server.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+                </div>
+              </div>
+              <div class="utterances-container">
+                <script src="https://utteranc.es/client.js" repo="digitalcashdev/digitalcash.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            © Dash Developers. Source at
+            <a href="https://github.com/digitalcashdev/digitalcash.dev" target="_blank">https://github.com/digitalcashdev/digitalcash.dev</a>.
+            <br />
+            Themed with
+            <a href="https://github.com/ryanburnette/eon" target="_blank">eon</a>. Built with <a href="https://bliss.js.org" target="_blank">Bliss ✨</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://digitalcash.dev/main.js"></script>
+  </body>
+</html>
