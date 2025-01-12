@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Update Dash SDK to ESM - DigitalCash.dev</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="git_repo" content="https://github.com/digitalcashdev/digitalcash.dev" />
+    <meta name="git_host" content="github" />
+    <meta name="git_branch" content="main" />
+    <meta name="content_path" content="content" />
+    <link rel="stylesheet" href="https://digitalcash.dev/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <header class="header">
+        <div class="brand content">
+          <h1>
+            <a href="https://digitalcash.dev/">DigitalCash.dev</a>
+          </h1>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="https://digitalcash.dev/">Home</a></li>
+            <li><a href="https://digitalcash.dev/proposals">Proposals</a></li>
+            <li><a href="https://digitalcash.dev/docs">Docs</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="section default-single">
+        <div class="container">
+          <div class="content">
+            <div class="postmeta-head">
+              <p>
+                <span class="author">
+                  <img class="gravatar" src="https://www.gravatar.com/avatar/71d4a1d0fd4b11008b4c7f655c3a43c4?s=64&d=identicon" />
+                  <span class="name">AJ ONeal</span>
+                </span>
+                <span class="date">November 6, 2024</span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-6-dash-sdk-esm.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-6-dash-sdk-esm.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+              </p>
+            </div>
+            <div class="single-title">
+              <h1 class="title"><a href="https://digitalcash.dev/proposals/dcd-6-dash-sdk-esm/">Update Dash SDK to ESM</a></h1>
+            </div>
+            <p>Updating the following JavaScript libraries to be compliant with the final ESM (a.k.a. <code>import</code> / <code>export</code>) specs (March 2023 &amp; March 2024).</p>
+            <p>This will make them more compatible with both framework-free and bundler-dependent development, both for <em>TypeScript</em> and <em>JavaScript</em>.</p>
+            <ul>
+              <li><a href="https://github.com/dashhive/dashkeys.js">DashKeys.js</a> - Encoding and Decoding Addresses, WIFs, etc (Base58Check)</li>
+              <li><a href="https://github.com/dashhive/dashhd.js">DashHD.js</a> - BIP-32, BIP-44 Wallet Derivation</li>
+              <li><a href="https://github.com/dashhive/dashrpc.js">DashRPC.js</a> - HTTP RPCs</li>
+              <li><a href="https://github.com/dashhive/dashtx.js">DashTx.js</a> - Signing &amp; Broadcasting Transactions</li>
+              <li><a href="https://github.com/dashhive/dashmessage.js">DashMessage.js</a> - Message Signing &amp; Verifying</li>
+              <li><a href="https://github.com/dashhive/dashp2p.js">DashP2P.js</a> - CoinJoin, Inventory</li>
+              <li><a href="https://github.com/dashhive/dashjoin.js">DashJoin.js</a> - CoinJoin</li>
+              <li><a href="https://github.com/dashhive/dashgov.js">DashGov.js</a> - Governance, Proposals</li>
+              <li><a href="https://github.com/dashhive/dashplatform.js">DashPlatform.js</a> - Evo (in-progress)</li>
+              <li><a href="https://github.com/dashhive/secp256k1.js">Secp256k1.js</a> - Generating, Signing, and Verifying Keys (bytes)</li>
+            </ul>
+            <p>It will also remove some annoying boilerplate and make both type and module resolutions generally easier to work with in JavaScript and TypeScript.</p>
+            <h1 id="why">Why</h1>
+            <p>We built the Dash SDK to be 100% compatible across Browsers, Bundlers, and Node, as well as all meta-frameworks (Vite, Nuxt, etc).</p>
+            <p>Due to a lack of consensus between the various Browser and Server vendors over the last 10 years, the only reliable ways to do this were either to use a variant of the CommonJS standard, or to use a pseudo-JavaScript language and &ldquo;compile&rdquo; it to different JavaScript targets, and publish multiple versions.</p>
+            <p>Despite having some cumbersome boilerplate, we opted for universally-compatible JavaScript because it&rsquo;s simpler and less error-prone.</p>
+            <p>Now that the standard is both complete and has been <em>implemented</em> in Browsers (for over 18 months), and Server JavaScript (currently in beta, but soon to be stable in early 2025), we can confidently move to ESM without having to publish multiple versions, or deal with breaking inconsistencies between platforms and vendors.</p>
+            <h1 id="how">How</h1>
+            <p>A tedious process of going through each library, its tests, and its demo applications, and updating the module system to ESM (a.k.a. &ldquo;import&rdquo;), and then republishing.</p>
+            <h1 id="what">What</h1>
+            <p>I&rsquo;ll be systematically updating the modules to be consistent:</p>
+            <ul>
+              <li><code>import</code>s and <code>export</code>s in the JavaScript files</li>
+              <li><code>package.json</code> <code>imports</code> and <code>exports</code> maps</li>
+              <li><code>index.html</code> <code>importmap</code> scripts</li>
+              <li><code>tsc</code> include paths</li>
+              <li>various tooling updates</li>
+            </ul>
+            <p>I&rsquo;ll also be verifying that the published packages work as expected.</p>
+            <h3 id="funding-development">Funding Development</h3>
+            <p>Requesting 100 DASH total.</p>
+            <p>50 DASH / month for 2 months for tested, documented, deliverables.</p>
+            <h3 id="unused--excess-funds">Unused / Excess Funds</h3>
+            <p>Surplus funds, if any, will be put towards bugfixes, updating documentation, closing out stale issues, and general cleanup of the SDK.</p>
+            <div class="postmeta-foot">
+              <div class="columns">
+                <div class="column">
+                  <div class="categories">
+                    <span class="catlabel"><strong>Categories:</strong></span>
+                    <ul>
+                      <li><a href="https://digitalcash.dev/categories/web-development/">Web Development</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="column">
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-6-dash-sdk-esm.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-6-dash-sdk-esm.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+                </div>
+              </div>
+              <div class="utterances-container">
+                <script src="https://utteranc.es/client.js" repo="digitalcashdev/digitalcash.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            © Dash Developers. Source at
+            <a href="https://github.com/digitalcashdev/digitalcash.dev" target="_blank">https://github.com/digitalcashdev/digitalcash.dev</a>.
+            <br />
+            Themed with
+            <a href="https://github.com/ryanburnette/eon" target="_blank">eon</a>. Built with <a href="https://bliss.js.org" target="_blank">Bliss ✨</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://digitalcash.dev/main.js"></script>
+  </body>
+</html>

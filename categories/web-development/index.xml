@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Development on DigitalCash.dev</title>
+    <link>https://digitalcash.dev/categories/web-development/</link>
+    <description>Recent content in Web Development on DigitalCash.dev</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>aj@therootcompany.com (AJ ONeal)</managingEditor>
+    <webMaster>aj@therootcompany.com (AJ ONeal)</webMaster>
+    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://digitalcash.dev/categories/web-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>General Web Development for Dash</title>
+      <link>https://digitalcash.dev/proposals/dcd-general-development/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-general-development/</guid>
+      <description>I&amp;rsquo;m submitting two proposals:&#xA;DCD JS SDK platform support - 200 DASH/month for 3 months DCD general development (this one)- 200 DASH/month for 3 months I have several ideas for how I can add value in Dash, but I want to work on whatever the network wants me to prioritize.&#xA;I am confident I can make good progress on adding Platform support to our Dash SDK.&#xA;If the network would like me to work on this please vote for DCD JS SDK platform support.</description>
+    </item>
+    <item>
+      <title>Platform JS SDK Support</title>
+      <link>https://digitalcash.dev/proposals/dcd-platform-js-sdk/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-platform-js-sdk/</guid>
+      <description>I&amp;rsquo;m submitting two proposals:&#xA;DCD JS SDK platform support (this one) - 200 DASH/month for 3 months DCD general development - 200 DASH/month for 3 months I have several ideas for how I can add value in Dash, but I want to work on whatever the network wants me to prioritize.&#xA;I am confident I can make good progress on adding Platform support to our Dash SDK.&#xA;If the network would like me to work on this please vote for DCD JS SDK platform support (this one).</description>
+    </item>
+    <item>
+      <title>Develop Auth &amp; Monetization Middleware</title>
+      <link>https://digitalcash.dev/proposals/dcd-7-auth-and-monetization-middleware/</link>
+      <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-7-auth-and-monetization-middleware/</guid>
+      <description>Develop an Authorization and Monetization Middleware (for SaaS) + Management Interface for Web Apps and APIs.&#xA;Instantly enable paid tiers to a product or service Paygate tokens by any combination of Rate Limit (requests per second or per day, etc) Expiration (token lasts 24 hours or 1 month, etc) Time (up to 100 minutes of cumulative use) Bytes (up to 1GB of upload or 10TB of download) Tier (must have paid at least x DASH, or no DASH) IP tracking for pre-customers / non-authenticated URL (can connect to a particular domain or path) Requires a token signed by a Dash Key Why There are a plethora of Cloud services that cost nothing to replicate, yet are excessively expensive to use.</description>
+    </item>
+    <item>
+      <title>Update Dash SDK to ESM</title>
+      <link>https://digitalcash.dev/proposals/dcd-6-dash-sdk-esm/</link>
+      <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-6-dash-sdk-esm/</guid>
+      <description>Updating the following JavaScript libraries to be compliant with the final ESM (a.k.a. import / export) specs (March 2023 &amp;amp; March 2024).&#xA;This will make them more compatible with both framework-free and bundler-dependent development, both for TypeScript and JavaScript.&#xA;DashKeys.js - Encoding and Decoding Addresses, WIFs, etc (Base58Check) DashHD.js - BIP-32, BIP-44 Wallet Derivation DashRPC.js - HTTP RPCs DashTx.js - Signing &amp;amp; Broadcasting Transactions DashMessage.js - Message Signing &amp;amp; Verifying DashP2P.</description>
+    </item>
+    <item>
+      <title>Develop Dash Platform Web Server</title>
+      <link>https://digitalcash.dev/proposals/dcd-5-platform-web-server/</link>
+      <pubDate>Tue, 05 Nov 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-5-platform-web-server/</guid>
+      <description>Developing a Dash Web Server for Dash Platform (ENOs), that also benefits MNOs and FNOs to solve these problems:&#xA;UI for Service Management (ex: domain, port, tls termination, path) Automated Certificates via Let&amp;rsquo;s Encrypt + CertMagic (Fix the ZeroSSL problem) Custom Domain Names / IPs (Fix the IP-only problems) Automated or Manual DNS (Fix the IP problem) Make Dash Network Services Web-Accessible (RPC, P2P, ZMQ, gRPC, etc) Participating Node Registry (like masternodelist) Rate Limiting + API Protection (to prevent abuse) Easily Host Dash Apps (assign domain, point to files and internal port) Single-Command Install (and easy manual install) Why So that customers can use Dash Network services in their Web Browser.</description>
+    </item>
+    <item>
+      <title>Develop Web SDK - Platform Identities &amp; Explorer Web App</title>
+      <link>https://digitalcash.dev/proposals/dcd-4-dev-web-sdk-platform-id-with-explorer/</link>
+      <pubDate>Mon, 04 Nov 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-4-dev-web-sdk-platform-id-with-explorer/</guid>
+      <description>Fund the Development of Platform Identities in a Platform JavaScript SDK + Related Web Explorer App:&#xA;Native JavaScript Library to register a Platform Identity \ Update DashHD to support DIP-14 (Platform) Keys Create a Server-Side JSON Web Proxy for Platform gRPC Create a Web Explorer for the relevant Platform DAPIs (for demonstrating use) The tool to showcase Platform Identity Registration will be similar to the Dash RPC Explorer (https://rpc.digitalcash.dev), but with more helper functionality to make it easier to work with the data and used in the Platform protocols.</description>
+    </item>
+    <item>
+      <title>Develop P2P &amp; ZMQ Web Explorers</title>
+      <link>https://digitalcash.dev/proposals/dcd-3-p2p-and-zmq-explorers/</link>
+      <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-3-p2p-and-zmq-explorers/</guid>
+      <description>Fund the Development of Dash Network Protocol Explorers for:&#xA;P2P (Socket Communication) https://docs.dash.org/projects/core/en/stable/docs/guide/p2p-network.html CoinJoin Pools &amp;amp; Requests Governance Objects Inventory Objects Block Sync ZMQ (Notifications) https://docs.dash.org/projects/core/en/stable/docs/api/zmq.html Instant Send Transactions Proposals Votes Self-Hosted Installers For all DNOs* (MNOs, ENOs, and FNOs) Some features will be restricted to FNOs, for security These will be similar to the Dash RPC Explorer (https://rpc.digitalcash.dev), but focus on the P2P and ZMQ protocols.&#xA;Why The P2P and ZMQ protocols are fairly technical, but could be also very useful if made available on the Web.</description>
+    </item>
+    <item>
+      <title>Web Wallet-Path Explorer</title>
+      <link>https://digitalcash.dev/proposals/dcd-2-web-wallet-address-explorer/</link>
+      <pubDate>Mon, 28 Oct 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-2-web-wallet-address-explorer/</guid>
+      <description>Develop, Release, &amp;amp; Deploy a Web Wallet Address Explorer&#xA;Stage 1:&#xA;Generate next available address(es) + QR Codes for a given Wallet (by phrase) for a given Account (by index) as either Receive or Change on mainnet or testnet and for one-off legacy (non-HD) addresses Copy Address or WIF in the normal text format (Base58Check) Scan Address or WIF as QR to pay or sweep Inspect address details (i.e. bytes as hex) Backup Wallets and Metadata as JSON Stage 2:</description>
+    </item>
+    <item>
+      <title>RPC Web Proxy &amp; Explorer 2024-Q4</title>
+      <link>https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/</guid>
+      <description>Dash, on The Web.&#xA;https://rpc.digitalcash.dev (mainnet) https://trpc.digitalcash.dev (testnet) (RPC Web Proxy and RPC Explorer for integrators)&#xA;Why These are the services that I wish I had had access to years ago. It would have saved me 10s of hours to have all the tools and documentation available together directly on the web, immediately - also getting a jumpstart on coding without waiting for hours of syncing.&#xA;This proposal serves 2 functions:</description>
+    </item>
+    <item>
+      <title>RPC Web Proxy &amp; Explorer: Installation
+</title>
+      <link>https://digitalcash.dev/docs/dcd-rpc-web-proxy-explorer/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/docs/dcd-rpc-web-proxy-explorer/</guid>
+      <description>System Requirements&#xA;1vCPU 32MB RAM 16MB Storage (MB, not GB) Install dashd:&#xA;curl https://webi.sh/dashd | sh source ~/.config/envman/PATH.env Wait for a full sync&#xA;Update dash.conf as needed, and restart:&#xA;[main] rpcuser=dash-rpcproxy rpcpassword=CHANGE_ME rpcbind=0.0.0.0:9998 rpcallowip=0.0.0.0/0 [test] rpcuser=dash-rpcproxy rpcpassword=CHANGE_ME rpcbind=0.0.0.0:19998 rpcallowip=0.0.0.0/0 Install dash-rpcproxy See https://github.com/digitalcashdev/rpcproxy and https://github.com/digitalcashdev/rpcproxy/issues/3&#xA;Update config file and workdir&#xA;mkdir -p ~/srv/dash-rpcproxy/ mkdir -p ~/.config/dash-rpcproxy/ touch ~/.config/dash-rpcproxy/env export DASHD_RPC_USERNAME=dash-rpcproxy export DASHD_RPC_PASSWORD=CHANGE_ME export DASHD_RPC_HOSTNAME=localhost export DASHD_RPC_PORT=19998 </description>
+    </item>
+  </channel>
+</rss>
