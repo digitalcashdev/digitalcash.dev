@@ -14,7 +14,7 @@ I'm submitting two proposals:
 2. [DCD general development](https://digitalcash.dev/proposals/dcd-general-development/) -
    200 DASH/month for 3 months
 
-I have [several ideas](https://digitalcash.dev/proposals/) for how I think I can
+I have [several ideas](https://digitalcash.dev/proposals/) for how I can
 add value in Dash, but I want to work on whatever the network wants me to
 prioritize.
 
