@@ -2,6 +2,10 @@
 hero_title: Integration Resources
 ---
 
+## Submit a Proposal to the Dash Network
+
+- <https://proposal.digitalcash.dev/>
+
 ## RPC Web Proxy & Explorer
 
 - mainnet: https://rpc.digitalcash.dev
