@@ -6,12 +6,19 @@ hero_title: Integration Resources
 
 - <https://proposal.digitalcash.dev/>
 
+## ZMQ Web Proxy & Explorer
+
+- mainnet: https://zmq.digitalcash.dev
+- testnet: https://tzmq.digitalcash.dev
+- DCG Docs:
+  [ZeroMQ (ZMQ) Notifications](https://docs.dash.org/en/stable/docs/core/api/zmq.html)
+
 ## RPC Web Proxy & Explorer
 
 - mainnet: https://rpc.digitalcash.dev
 - testnet: https://trpc.digitalcash.dev
 - DCG Docs:
-  [RPCs: Quick Reference](https://docs.dash.org/projects/core/en/stable/docs/api/remote-procedure-call-quick-reference.html)
+  [RPCs: Quick Reference](https://docs.dash.org/en/stable/docs/core/api/remote-procedure-call-quick-reference.html)
 
 ## Testnet
 
