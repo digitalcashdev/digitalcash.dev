@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Web Wallet-Path Explorer - DigitalCash.dev</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="git_repo" content="https://github.com/digitalcashdev/digitalcash.dev" />
+    <meta name="git_host" content="github" />
+    <meta name="git_branch" content="main" />
+    <meta name="content_path" content="content" />
+    <link rel="stylesheet" href="https://digitalcash.dev/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <header class="header">
+        <div class="brand content">
+          <h1>
+            <a href="https://digitalcash.dev/">DigitalCash.dev</a>
+          </h1>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="https://digitalcash.dev/">Home</a></li>
+            <li><a href="https://digitalcash.dev/proposals">Proposals</a></li>
+            <li><a href="https://digitalcash.dev/docs">Docs</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="section default-single">
+        <div class="container">
+          <div class="content">
+            <div class="postmeta-head">
+              <p>
+                <span class="author">
+                  <img class="gravatar" src="https://www.gravatar.com/avatar/71d4a1d0fd4b11008b4c7f655c3a43c4?s=64&d=identicon" />
+                  <span class="name">AJ ONeal</span>
+                </span>
+                <span class="date">October 28, 2024</span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-2-web-wallet-address-explorer.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-2-web-wallet-address-explorer.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+              </p>
+            </div>
+            <div class="single-title">
+              <h1 class="title"><a href="https://digitalcash.dev/proposals/dcd-2-web-wallet-address-explorer/">Web Wallet-Path Explorer</a></h1>
+            </div>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+              <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/TMKbhYQ9Bs4?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0" title="YouTube video"></iframe>
+            </div>
+            <p>Develop, Release, &amp; Deploy a Web Wallet Address Explorer</p>
+            <p>Stage 1:</p>
+            <ol>
+              <li>
+                Generate <em>next available address(es)</em> + QR Codes
+                <ul>
+                  <li>for a given <em>Wallet</em> (by phrase)</li>
+                  <li>for a given <em>Account</em> (by index)</li>
+                  <li>as either <em>Receive</em> or <em>Change</em></li>
+                  <li>on <code>mainnet</code> or <code>testnet</code></li>
+                  <li>and for one-off legacy (non-HD) addresses</li>
+                </ul>
+              </li>
+              <li>Copy Address or WIF in the normal text format (<em>Base58Check</em>)</li>
+              <li>Scan Address or WIF as QR to pay or sweep</li>
+              <li>Inspect address details (i.e. bytes as hex)</li>
+              <li>Backup Wallets and Metadata as JSON</li>
+            </ol>
+            <p>Stage 2:</p>
+            <ol>
+              <li>
+                <strong>Evo Keys</strong> <br />
+                (for the new, bespoke addressing scheme not yet supported by other tools)
+              </li>
+              <li>Ability to mark unused addresses as reserved / pending.</li>
+              <li>Enable URL redirects for App integration</li>
+            </ol>
+            <h2 id="why">Why</h2>
+            <p>Addresses and WIFs (Private Keys) are necessary for just about any Dash application you can imagine, inculding Evo.</p>
+            <p>However, the code (and sometimes infrastructure) required for working with them is both tedious, and nuanced - so it can be a huge time suck as a first step.</p>
+            <p>Loading, exporting, and tracking addresses and keys for testing also presents a bit of friction.</p>
+            <p>This will serve the following purposes of:</p>
+            <ol>
+              <li>
+                enhance developer focus <br />
+                (to skip minutia when prototyping)
+              </li>
+              <li>
+                copy-pasta for production apps <br />
+                (for known-working, easy-to-modify implementation)
+              </li>
+              <li>
+                exploration <br />
+                (to understand how wallets work)
+              </li>
+              <li>
+                debugging <br />
+                (for comparison, to ensure correctness when writing new code)
+              </li>
+            </ol>
+            <p>Having a tool dedicated to the work of managing addresses will allow all of us to <strong>focus on the unique value</strong> of our projects <strong>first</strong>, and delay some of the specifics of wallet integration until we have working prototypes.</p>
+            <p>Also, this can also be reskinned for production use as a standalone application.</p>
+            <h2 id="how">How</h2>
+            <p>This Web App will</p>
+            <ul>
+              <li>use our existing <a href="https://github.com/dashhive">Dash Web SDK</a></li>
+              <li>
+                check address balances (including in bulk)
+                <ul>
+                  <li>utilizing DashCore RPC calls</li>
+                  <li>with correct <em>InstantSend</em> balances (using <code>mempool</code>)</li>
+                  <li>and compatible with <a href="https://rpc.digitalcash.dev/">https://rpc.digitalcash.dev/</a> for the Web</li>
+                </ul>
+              </li>
+            </ul>
+            <h3 id="hosting-by-mnos--enos">Hosting by MNOs &amp; ENOs</h3>
+            <p>As with the <a href="https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/">RPC Web Proxy</a> itself, I intend this to also be hosted directly by the MNOs &amp; ENOs that choose to run them.</p>
+            <p>As mentioned <a href="https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/">previously</a>, I have another proposal in mind for how to accomplish that, which I&rsquo;ll retroactively link here once it&rsquo;s ready.</p>
+            <p>(essentially the idea is to integrate Dash keys with Web-standard auth tokens to directly pay (or stake collateral) for API usage - a mix of time and number of requests, as is common in the industry)</p>
+            <h2 id="what">What</h2>
+            <h3 id="web-app">Web App</h3>
+            <p>This will be delivered as a standards-compliant web app as simple plain text files (HTML, CSS, JavaScript).</p>
+            <p>It will be both</p>
+            <ul>
+              <li>self-hostable as static files from a standard web server</li>
+              <li>publicly hosted as <a href="https://addresses.digitalcash.dev">https://addresses.digitalcash.dev</a> (not up yet)</li>
+            </ul>
+            <p>It will work with or without the DashCore RPCs (address availability will be turned off if it&rsquo;s not available).</p>
+            <h3 id="installation-tooling--guide">Installation Tooling &amp; Guide</h3>
+            <p>Code is essentially worthless - unless someone else can easily figure out how to use and deploy it.</p>
+            <p>This means all code needs at least these 3 things:</p>
+            <ol>
+              <li>
+                A Working Demo <br />
+                (i.e. deployed following the instructions)
+              </li>
+              <li>
+                API Documentation <br />
+                (i.e. how a developer uses it)
+              </li>
+              <li>
+                Installation &amp; Deployment Instructions <br />
+                (i.e. how to test locally, and deploy on the internet)
+              </li>
+            </ol>
+            <p>I make a habit of testing my documentation by following it, and I will do the same here.</p>
+            <h3 id="web--nodespanspanjs-libraries">Web + Node<!-- raw HTML omitted -->.<!-- raw HTML omitted -->js Libraries</h3>
+            <p>Most of the work will use our existing <a href="https://github.com/dashhive">Dash Web SDK</a>, but if any novel library work is done, it will also be made available for both Web and Node<!-- raw HTML omitted -->.</p>
+            <h2 id="meta">Meta</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th style="text-align: left">Name</th>
+                  <th style="text-align: left"><code>DCD_Web-Wallet-QR-Explorer</code></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: left">Gobject</td>
+                  <td style="text-align: left"><code>b5708b0ce7042d9c3bab29b1a7e2216bcc3d479ab1622a6c1d2504d5326d8764</code></td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">Gobject Link</td>
+                  <td style="text-align: left"><a href="https://rpc.digitalcash.dev/#?method=gobject&amp;params=%5B%22get%22,%22b5708b0ce7042d9c3bab29b1a7e2216bcc3d479ab1622a6c1d2504d5326d8764%22%5D&amp;submit">https://rpc.digitalcash.dev/#?method=gobject&amp;params=[&quot;get&quot;,&quot;b5708b0ce7042d9c3bab29b1a7e2216bcc3d479ab1622a6c1d2504d5326d8764&quot;]&amp;submit</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="postmeta-foot">
+              <div class="columns">
+                <div class="column">
+                  <div class="categories">
+                    <span class="catlabel"><strong>Categories:</strong></span>
+                    <ul>
+                      <li><a href="https://digitalcash.dev/categories/web-development/">Web Development</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="column">
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-2-web-wallet-address-explorer.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-2-web-wallet-address-explorer.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+                </div>
+              </div>
+              <div class="utterances-container">
+                <script src="https://utteranc.es/client.js" repo="digitalcashdev/digitalcash.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            © Dash Developers. Source at
+            <a href="https://github.com/digitalcashdev/digitalcash.dev" target="_blank">https://github.com/digitalcashdev/digitalcash.dev</a>.
+            <br />
+            Themed with
+            <a href="https://github.com/ryanburnette/eon" target="_blank">eon</a>. Built with <a href="https://bliss.js.org" target="_blank">Bliss ✨</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://digitalcash.dev/main.js"></script>
+  </body>
+</html>

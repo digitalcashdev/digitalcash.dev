@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on DigitalCash.dev</title>
+    <link>https://digitalcash.dev/docs/</link>
+    <description>Recent content in Docs on DigitalCash.dev</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>aj@therootcompany.com (AJ ONeal)</managingEditor>
+    <webMaster>aj@therootcompany.com (AJ ONeal)</webMaster>
+    <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://digitalcash.dev/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RPC Web Proxy &amp; Explorer: Installation
+</title>
+      <link>https://digitalcash.dev/docs/dcd-rpc-web-proxy-explorer/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate><author>aj@therootcompany.com (AJ ONeal)</author>
+      <guid>https://digitalcash.dev/docs/dcd-rpc-web-proxy-explorer/</guid>
+      <description>System Requirements&#xA;1vCPU 32MB RAM 16MB Storage (MB, not GB) Install dashd:&#xA;curl https://webi.sh/dashd | sh source ~/.config/envman/PATH.env Wait for a full sync&#xA;Update dash.conf as needed, and restart:&#xA;[main] rpcuser=dash-rpcproxy rpcpassword=CHANGE_ME rpcbind=0.0.0.0:9998 rpcallowip=0.0.0.0/0 [test] rpcuser=dash-rpcproxy rpcpassword=CHANGE_ME rpcbind=0.0.0.0:19998 rpcallowip=0.0.0.0/0 Install dash-rpcproxy See https://github.com/digitalcashdev/rpcproxy and https://github.com/digitalcashdev/rpcproxy/issues/3&#xA;Update config file and workdir&#xA;mkdir -p ~/srv/dash-rpcproxy/ mkdir -p ~/.config/dash-rpcproxy/ touch ~/.config/dash-rpcproxy/env export DASHD_RPC_USERNAME=dash-rpcproxy export DASHD_RPC_PASSWORD=CHANGE_ME export DASHD_RPC_HOSTNAME=localhost export DASHD_RPC_PORT=19998 </description>
+    </item>
+  </channel>
+</rss>

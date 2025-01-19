@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RPC Web Proxy &amp; Explorer: Installation - DigitalCash.dev</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="git_repo" content="https://github.com/digitalcashdev/digitalcash.dev" />
+    <meta name="git_host" content="github" />
+    <meta name="git_branch" content="main" />
+    <meta name="content_path" content="content" />
+    <link rel="stylesheet" href="https://digitalcash.dev/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <header class="header">
+        <div class="brand content">
+          <h1>
+            <a href="https://digitalcash.dev/">DigitalCash.dev</a>
+          </h1>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="https://digitalcash.dev/">Home</a></li>
+            <li><a href="https://digitalcash.dev/proposals">Proposals</a></li>
+            <li><a href="https://digitalcash.dev/docs">Docs</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="section default-single">
+        <div class="container">
+          <div class="content">
+            <div class="postmeta-head">
+              <p>
+                <span class="author">
+                  <img class="gravatar" src="https://www.gravatar.com/avatar/71d4a1d0fd4b11008b4c7f655c3a43c4?s=64&d=identicon" />
+                  <span class="name">AJ ONeal</span>
+                </span>
+                <span class="date">August 10, 2024</span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/docs/dcd-rpc-web-proxy-explorer.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/docs/dcd-rpc-web-proxy-explorer.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+              </p>
+            </div>
+            <div class="single-title">
+              <h1 class="title"><a href="https://digitalcash.dev/docs/dcd-rpc-web-proxy-explorer/">RPC Web Proxy &amp; Explorer: Installation </a></h1>
+            </div>
+            <p>System Requirements</p>
+            <ul>
+              <li>1vCPU</li>
+              <li>32MB RAM</li>
+              <li>16MB Storage</li>
+              <li>(MB, not GB)</li>
+            </ul>
+            <ol>
+              <li>
+                <p>Install <code>dashd</code>:</p>
+                <div class="highlight">
+                  <pre tabindex="0" style="color: #f8f8f2; background-color: #272822; -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl https://webi.sh/dashd | sh
+</span></span><span style="display:flex;"><span>source ~/.config/envman/PATH.env
+</span></span></code></pre>
+                </div>
+              </li>
+              <li>
+                <p>Wait for a full sync</p>
+              </li>
+              <li>
+                <p>Update <code>dash.conf</code> as needed, and restart:</p>
+                <div class="highlight">
+                  <pre tabindex="0" style="color: #f8f8f2; background-color: #272822; -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#f92672">[</span>main<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>rpcuser<span style="color:#f92672">=</span>dash-rpcproxy
+</span></span><span style="display:flex;"><span>rpcpassword<span style="color:#f92672">=</span>CHANGE_ME
+</span></span><span style="display:flex;"><span>rpcbind<span style="color:#f92672">=</span>0.0.0.0:9998
+</span></span><span style="display:flex;"><span>rpcallowip<span style="color:#f92672">=</span>0.0.0.0/0
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>test<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>rpcuser<span style="color:#f92672">=</span>dash-rpcproxy
+</span></span><span style="display:flex;"><span>rpcpassword<span style="color:#f92672">=</span>CHANGE_ME
+</span></span><span style="display:flex;"><span>rpcbind<span style="color:#f92672">=</span>0.0.0.0:19998
+</span></span><span style="display:flex;"><span>rpcallowip<span style="color:#f92672">=</span>0.0.0.0/0
+</span></span></code></pre>
+                </div>
+              </li>
+              <li>
+                <p>
+                  Install <code>dash-rpcproxy</code> <br />
+                  See <a href="https://github.com/digitalcashdev/rpcproxy">https://github.com/digitalcashdev/rpcproxy</a> <br />
+                  and <a href="https://github.com/digitalcashdev/rpcproxy/issues/3">https://github.com/digitalcashdev/rpcproxy/issues/3</a>
+                </p>
+              </li>
+              <li>
+                <p>Update config file and workdir</p>
+                <div class="highlight">
+                  <pre tabindex="0" style="color: #f8f8f2; background-color: #272822; -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir -p ~/srv/dash-rpcproxy/
+</span></span><span style="display:flex;"><span>mkdir -p ~/.config/dash-rpcproxy/
+</span></span><span style="display:flex;"><span>touch ~/.config/dash-rpcproxy/env
+</span></span></code></pre>
+                </div>
+                <div class="highlight">
+                  <pre tabindex="0" style="color: #f8f8f2; background-color: #272822; -moz-tab-size: 4; -o-tab-size: 4; tab-size: 4"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export DASHD_RPC_USERNAME<span style="color:#f92672">=</span>dash-rpcproxy
+</span></span><span style="display:flex;"><span>export DASHD_RPC_PASSWORD<span style="color:#f92672">=</span>CHANGE_ME
+</span></span><span style="display:flex;"><span>export DASHD_RPC_HOSTNAME<span style="color:#f92672">=</span>localhost
+</span></span><span style="display:flex;"><span>export DASHD_RPC_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">19998</span>
+</span></span></code></pre>
+                </div>
+              </li>
+            </ol>
+            <div class="postmeta-foot">
+              <div class="columns">
+                <div class="column">
+                  <div class="categories">
+                    <span class="catlabel"><strong>Categories:</strong></span>
+                    <ul>
+                      <li><a href="https://digitalcash.dev/categories/web-development/">Web Development</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="column">
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/docs/dcd-rpc-web-proxy-explorer.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/docs/dcd-rpc-web-proxy-explorer.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+                </div>
+              </div>
+              <div class="utterances-container">
+                <script src="https://utteranc.es/client.js" repo="digitalcashdev/digitalcash.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            © Dash Developers. Source at
+            <a href="https://github.com/digitalcashdev/digitalcash.dev" target="_blank">https://github.com/digitalcashdev/digitalcash.dev</a>.
+            <br />
+            Themed with
+            <a href="https://github.com/ryanburnette/eon" target="_blank">eon</a>. Built with <a href="https://bliss.js.org" target="_blank">Bliss ✨</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://digitalcash.dev/main.js"></script>
+  </body>
+</html>

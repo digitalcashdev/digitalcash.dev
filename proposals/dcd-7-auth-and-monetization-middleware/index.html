@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Develop Auth &amp; Monetization Middleware - DigitalCash.dev</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="git_repo" content="https://github.com/digitalcashdev/digitalcash.dev" />
+    <meta name="git_host" content="github" />
+    <meta name="git_branch" content="main" />
+    <meta name="content_path" content="content" />
+    <link rel="stylesheet" href="https://digitalcash.dev/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <header class="header">
+        <div class="brand content">
+          <h1>
+            <a href="https://digitalcash.dev/">DigitalCash.dev</a>
+          </h1>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="https://digitalcash.dev/">Home</a></li>
+            <li><a href="https://digitalcash.dev/proposals">Proposals</a></li>
+            <li><a href="https://digitalcash.dev/docs">Docs</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="section default-single">
+        <div class="container">
+          <div class="content">
+            <div class="postmeta-head">
+              <p>
+                <span class="author">
+                  <img class="gravatar" src="https://www.gravatar.com/avatar/71d4a1d0fd4b11008b4c7f655c3a43c4?s=64&d=identicon" />
+                  <span class="name">AJ ONeal</span>
+                </span>
+                <span class="date">November 7, 2024</span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-7-auth-and-monetization-middleware.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-7-auth-and-monetization-middleware.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+              </p>
+            </div>
+            <div class="single-title">
+              <h1 class="title"><a href="https://digitalcash.dev/proposals/dcd-7-auth-and-monetization-middleware/">Develop Auth &amp; Monetization Middleware</a></h1>
+            </div>
+            <p>Develop an Authorization and Monetization Middleware (for SaaS) + Management Interface for Web Apps and APIs.</p>
+            <ul>
+              <li>Instantly enable paid tiers to a product or service</li>
+              <li>
+                Paygate tokens by any combination of
+                <ul>
+                  <li>Rate Limit (requests per second or per day, etc)</li>
+                  <li>Expiration (token lasts 24 hours or 1 month, etc)</li>
+                  <li>Time (up to 100 minutes of cumulative use)</li>
+                  <li>Bytes (up to 1GB of upload or 10TB of download)</li>
+                  <li>
+                    Tier (must have paid at least x DASH, or no DASH)
+                    <ul>
+                      <li>IP tracking for pre-customers / non-authenticated</li>
+                    </ul>
+                  </li>
+                  <li>URL (can connect to a particular domain or path)</li>
+                </ul>
+              </li>
+              <li>Requires a token signed by a Dash Key</li>
+            </ul>
+            <h1 id="why">Why</h1>
+            <p>
+              There are a plethora of Cloud services that cost nothing to replicate, yet are excessively expensive to use. <br />
+              (ex: File Hosting, S3, Image Resizing, File Type Conversion, Ai Document Extraction)
+            </p>
+            <p>For any service to be sustainable, it must be paid for by the customers that use it.</p>
+            <p>ENOs, MNOs, and FNOs all have systems that mostly sit all day and do nothing.</p>
+            <p>Others in the Dash community have non-DNO systems that also sit all doing mostly nothing.</p>
+            <p>Let&rsquo;s compete in the market by providing services that we have without any of the cost overhead of investors or transaction fees.</p>
+            <h1 id="how">How</h1>
+            <p>Well, did I mention that Go is <em>really</em> great for building network middleware?</p>
+            <p>Its composable network stack also makes it very easy to count usage statistics on per-request basis and then batch and queue updates to the stats non-disruptively.</p>
+            <p>We can have a web service that sits in-front-of or in-between other web services - for example, in front of the primary web server, or in-between the reverse proxy and the API - and transparently pay-gates access.</p>
+            <p>This could also be embedded into the <a href="../dcd-5-platform-web-server/">Platform Web Server</a>.</p>
+            <h1 id="what">What</h1>
+            <ul>
+              <li>
+                A Web Service that can paygate and proxy
+                <ul>
+                  <li>Web App (via cookie, like CloudFlare)</li>
+                  <li>API requests (via token)</li>
+                  <li>Customer Auth (via Dash Key)</li>
+                </ul>
+              </li>
+              <li>Fork JWT Library to Support Dash Keys (Secp256k1)</li>
+              <li>
+                Write built-in Management Web App to assign payment categories <br />
+                (ex: 1 DASH for up to 90 days, up to 1GB download, up to 100 minutes CPU, etc)
+              </li>
+            </ul>
+            <h3 id="funding-development">Funding Development</h3>
+            <p>Requesting 400 DASH total.</p>
+            <p>200 DASH / month for 2 months for documented, deployable deliverables.</p>
+            <p>It&rsquo;s likely that to implement and expose all of these features in a customer-friendly will require additional funding.</p>
+            <p>HOWEVER, this <em>WILL</em> get us to a usable product, and I&rsquo;ll have that in hand if and when requesting additional funds for the project.</p>
+            <div class="postmeta-foot">
+              <div class="columns">
+                <div class="column">
+                  <div class="categories">
+                    <span class="catlabel"><strong>Categories:</strong></span>
+                    <ul>
+                      <li><a href="https://digitalcash.dev/categories/web-development/">Web Development</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="column">
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-7-auth-and-monetization-middleware.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-7-auth-and-monetization-middleware.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+                </div>
+              </div>
+              <div class="utterances-container">
+                <script src="https://utteranc.es/client.js" repo="digitalcashdev/digitalcash.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            © Dash Developers. Source at
+            <a href="https://github.com/digitalcashdev/digitalcash.dev" target="_blank">https://github.com/digitalcashdev/digitalcash.dev</a>.
+            <br />
+            Themed with
+            <a href="https://github.com/ryanburnette/eon" target="_blank">eon</a>. Built with <a href="https://bliss.js.org" target="_blank">Bliss ✨</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://digitalcash.dev/main.js"></script>
+  </body>
+</html>

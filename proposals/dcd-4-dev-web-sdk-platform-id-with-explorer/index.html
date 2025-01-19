@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Develop Web SDK - Platform Identities &amp; Explorer Web App - DigitalCash.dev</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="git_repo" content="https://github.com/digitalcashdev/digitalcash.dev" />
+    <meta name="git_host" content="github" />
+    <meta name="git_branch" content="main" />
+    <meta name="content_path" content="content" />
+    <link rel="stylesheet" href="https://digitalcash.dev/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <header class="header">
+        <div class="brand content">
+          <h1>
+            <a href="https://digitalcash.dev/">DigitalCash.dev</a>
+          </h1>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="https://digitalcash.dev/">Home</a></li>
+            <li><a href="https://digitalcash.dev/proposals">Proposals</a></li>
+            <li><a href="https://digitalcash.dev/docs">Docs</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="section default-single">
+        <div class="container">
+          <div class="content">
+            <div class="postmeta-head">
+              <p>
+                <span class="author">
+                  <img class="gravatar" src="https://www.gravatar.com/avatar/71d4a1d0fd4b11008b4c7f655c3a43c4?s=64&d=identicon" />
+                  <span class="name">AJ ONeal</span>
+                </span>
+                <span class="date">November 4, 2024</span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-4-dev-web-sdk-platform-id-with-explorer.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-4-dev-web-sdk-platform-id-with-explorer.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+              </p>
+            </div>
+            <div class="single-title">
+              <h1 class="title"><a href="https://digitalcash.dev/proposals/dcd-4-dev-web-sdk-platform-id-with-explorer/">Develop Web SDK - Platform Identities &amp; Explorer Web App</a></h1>
+            </div>
+            <p>Fund the <strong>Development</strong> of Platform Identities in a Platform JavaScript SDK + Related Web Explorer App:</p>
+            <ul>
+              <li>Native JavaScript Library to register a Platform Identity \</li>
+              <li>Update DashHD to support DIP-14 (Platform) Keys</li>
+              <li>Create a Server-Side JSON Web Proxy for Platform gRPC</li>
+              <li>Create a Web Explorer for the relevant Platform DAPIs (for demonstrating use)</li>
+            </ul>
+            <p>The tool to <strong>showcase Platform Identity Registration</strong> will be similar to the <a href="https://rpc.digitalcash.dev">Dash RPC Explorer</a> (<a href="https://rpc.digitalcash.dev">https://rpc.digitalcash.dev</a>), but with more helper functionality to make it easier to work with the data and used in the Platform protocols.</p>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden">
+              <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/cAAM6PzY_q4?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0" title="YouTube video"></iframe>
+            </div>
+            <h2 id="why">Why</h2>
+            <p>Since Platform is approaching stability, now is a good time to begin investing in these tools to make Platform available on the web.</p>
+            <p>&ldquo;Platform&rdquo; is a collection of interdependent protocols, DIPs, APIs, and Keys.</p>
+            <p>The primary purpose of this proposal is to get to the first &ldquo;full loop&rdquo; of a set of Platform transitions (in Native JavaScript) to register an Identity - after which I&rsquo;ll submit another proposal for to support another batch of transitions.</p>
+            <h3 id="bringing-platform-identities-to-the-web">Bringing Platform Identities to The Web</h3>
+            <p>We&rsquo;ve already done the work to support <a href="https://github.com/dashhive/DashTx.js/pull/83">Platform Transactions in DashTx.js</a>, and <a href="https://github.com/dashhive/DashPlatform.js/pull/6">Platform&rsquo;s bindata to DashPlatform.js</a>.</p>
+            <p>This proposal will support the completion of the identity registration process - in pure JavaScript (no WASM, no Rust), and to be able to do so in the explorer.</p>
+            <ul>
+              <li>Lightweight &amp; Fast</li>
+              <li>
+                Native JavaScript
+                <ul>
+                  <li>No client-side protobufs</li>
+                  <li>No Rust or WASM</li>
+                </ul>
+              </li>
+              <li>Faster Development Time</li>
+              <li>Easier Debugging</li>
+            </ul>
+            <h3 id="bringing-platform-keys-to-the-web">Bringing Platform Keys to The Web</h3>
+            <p>Platform&rsquo;s DIP-14 keys break compatibility with BIP-32 on a simple, but fundamental level. Rather than using standard Integers for all path components, some paths use BigInts which can&rsquo;t be handled as easily in JavaScript.</p>
+            <p>This has an &ldquo;integer-coloring&rdquo; effect that will require modest refactoring and testing of our DashHD library.</p>
+            <h3 id="bringing-platform-apis-to-the-web">Bringing Platform APIs to The Web</h3>
+            <p>There&rsquo;s already <a href="https://github.com/fullstorydev/grpcui">a gRPC explorer</a> that can be leveraged to get a jump start on this. In theory, the work of providing an API layer to translate to Web-friendly JSON could be done very quickly.</p>
+            <p>However, the object structures are much more complex than the <a href="https://rpc.digitalcash.dev">Dash RPC Explorer</a>, and I&rsquo;d like to have custom forms for some of the APIs to make them as easy to use as possible.</p>
+            <h3 id="software-development">Software Development</h3>
+            <ul>
+              <li>server code will be written in Go, as there are existing gRPC libraries</li>
+              <li>suitable client code will be written as JavaScript libraries</li>
+              <li>the Explorer UIs will be implemented in plain JavaScript, HTML, and CSS</li>
+            </ul>
+            <h3 id="hosting-by-dnos-mnos-enos-and-fnos">Hosting by DNOs (MNOs, ENOs, and FNOs)</h3>
+            <p>I will also create self-install scripts so that any DNOs (Dash Node owners) of all types can bring the value of these tools to the whole Dash Network.</p>
+            <p>These will be similar to the <a href="https://webinstall.dev/dashd">DashCore Daemon</a> installer I created previously.</p>
+            <h3 id="funding-development-vs-public-hosting">Funding Development vs Public Hosting</h3>
+            <p>Requesting 400 DASH total.</p>
+            <p>200 DASH / month for 2 months for documented, deployable deliverables.</p>
+            <p>I expect that this will both require more discovery and knowledge work than the other explorers, and also that I will deliver more task- and workflow-specific tools in these explorers.</p>
+            <p>Once developed, the continued funding for hosting these will be part of <a href="https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/">https://digitalcash.dev/proposals/dcd-1-rpc-web-proxy/</a>.</p>
+            <h3 id="unused--excess-funds">Unused / Excess Funds</h3>
+            <p>Surplus funds, if any, will be put towards future Dash SDK, Explorer, Proxy, or Payments work.</p>
+            <div class="postmeta-foot">
+              <div class="columns">
+                <div class="column">
+                  <div class="categories">
+                    <span class="catlabel"><strong>Categories:</strong></span>
+                    <ul>
+                      <li><a href="https://digitalcash.dev/categories/web-development/">Web Development</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="column">
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/blob/main/content/proposals/dcd-4-dev-web-sdk-platform-id-with-explorer.md" style="color: #485fc7" target="_blank">Git Source</a></span>
+                  <span class="edit" style=""><a href="https://github.com/digitalcashdev/digitalcash.dev/edit/main/content/proposals/dcd-4-dev-web-sdk-platform-id-with-explorer.md" style="color: #485fc7" target="_blank">Suggest Edit</a></span>
+                </div>
+              </div>
+              <div class="utterances-container">
+                <script src="https://utteranc.es/client.js" repo="digitalcashdev/digitalcash.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            © Dash Developers. Source at
+            <a href="https://github.com/digitalcashdev/digitalcash.dev" target="_blank">https://github.com/digitalcashdev/digitalcash.dev</a>.
+            <br />
+            Themed with
+            <a href="https://github.com/ryanburnette/eon" target="_blank">eon</a>. Built with <a href="https://bliss.js.org" target="_blank">Bliss ✨</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://digitalcash.dev/main.js"></script>
+  </body>
+</html>
